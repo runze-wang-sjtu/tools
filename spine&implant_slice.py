@@ -8,6 +8,14 @@ import numpy as np
 import SimpleITK as sitk
 from implant_segmentation import *
 
+def dilated(x, iterations=None):
+
+    'x: np.array'
+    kernel = np.ones((5,5), np.uint8)
+    erosion = cv2.dilate(x, kernel, iterations=iterations)
+
+    return erosion
+
 if __name__ == '__main__':
 
     path = '/Users/runze.wang/Desktop'
@@ -24,7 +32,8 @@ if __name__ == '__main__':
 
     implant_zrange = np.unique(np.where(implant)[0])
     for i in implant_zrange:
-        cv2.imwrite(os.path.join(path,'mask','implant_{}.png').format(i), implant[i,:,:])
+        
+        cv2.imwrite(os.path.join(path,'mask','implant_{}.png').format(i), dilated(implant[i,:,:],iterations=3))
         cv2.imwrite(os.path.join(path,'image','image_{}.png').format(i), img[i,:,:])
         print('{} has done'.format(os.path.join(path,'image','image_{}.png').format(i)))
 

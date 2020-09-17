@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="root@202.120.40.157:50003" autoUploadExternalChanges="true">
     <serverData>
-      <paths name="gdp@192.168.1.28:22">
+      <paths name="root@202.120.40.157:50003">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/gdp/codes/test_scripts" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/data/rz/codes/tools" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
   </component>
 </project>
